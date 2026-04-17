@@ -4,14 +4,14 @@
 import { profileData } from "@/lib/data/profile";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import useTypewriter from "@/hooks/useTypewriter";
-import Typewriter from "typewriter-effect"; // Import thư viện mới cài
+import Typewriter from "typewriter-effect";
 
 export default function Hero() {
-  // Tên gõ 1 lần, tốc độ 150ms
   const typedName = useTypewriter(profileData.name, 150);
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-20">
+      
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')" }}
@@ -19,45 +19,66 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#161821]/85 backdrop-brightness-75"></div>
       </div>
 
-      {/* Đã thêm padding bottom lớn (pb-[12rem] md:pb-[16rem]) ở đây để đẩy nội dung lên cao hơn khi căn giữa dọc */}
-      <div className="relative z-10 flex flex-col items-center px-4 w-full pb-[12rem] md:pb-[16rem]">
+      <div className="relative z-10 flex flex-col items-center px-4 w-full max-w-4xl pb-[12rem]">
         
-        <ScrollReveal direction="down" delay={0.1}>
-          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border border-gray-600 mb-6 bg-[#252833] shadow-[0_0_30px_rgba(255,89,89,0.15)]">
-            <img 
-              src="/images/avatar.jpg" 
-              alt={profileData.name} 
-              className="w-full h-full object-cover" 
-            />
-          </div>
+        {/* Lời chào: Màu đỏ nhạt/hồng cam để dịu mắt */}
+        <ScrollReveal direction="up" delay={0.1}>
+          <p className="text-[#ff8a8a] font-medium text-2xl md:text-3xl mb-4 tracking-wide">
+            Hi, I'm
+          </p>
         </ScrollReveal>
 
+        {/* Tên: Gradient từ Đỏ chủ đạo (#ff5959) sang Cam Vàng, có glow đỏ */}
         <ScrollReveal direction="up" delay={0.3}>
-          <h1 className="text-5xl md:text-7xl font-bold mb-3 tracking-tight h-[80px]">
-            {/* Áp dụng text đã được gõ cho Tên */}
-            <span className="text-[#ff5959]">{typedName}</span>
+          <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold mb-6 tracking-tight h-[90px] lg:h-[110px]">
+            <span className="bg-gradient-to-r from-[#ff5959] to-[#ffb86c] text-transparent bg-clip-text drop-shadow-[0_0_20px_rgba(255,89,89,0.2)]">
+              {typedName}
+            </span>
           </h1>
         </ScrollReveal>
 
+        {/* Chức danh */}
         <ScrollReveal direction="up" delay={0.5}>
-          <div className="text-gray-300 text-xl md:text-2xl font-medium tracking-wide h-[40px] flex justify-center">
-            {/* Hiệu ứng gõ xóa luân phiên cho Chức danh */}
+          <div className="text-gray-300 text-xl md:text-2xl font-medium tracking-wide h-[40px] flex justify-center mb-12">
             <Typewriter
               options={{
                 strings: [
                   "Fullstack Developer",
                   "Software Engineer",
-                  "Frontend Developer"
+                  "Web Developer"
                 ],
                 autoStart: true,
                 loop: true,
                 delay: 75,
                 deleteSpeed: 50,
-                cursorClassName: "text-[#ff5959] animate-pulse" // Chỉnh màu con trỏ
+                cursorClassName: "text-[#ff5959] animate-pulse" // Con trỏ màu đỏ chủ đạo
               }}
             />
           </div>
         </ScrollReveal>
+
+        {/* Cụm Nút bấm */}
+        <ScrollReveal direction="up" delay={0.7}>
+          <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full">
+            {/* Nút Download CV: Đỏ chủ đạo, có hiệu ứng shadow */}
+            <a 
+              href="/docs/CV_HoGiaKham.pdf" 
+              target="_blank" 
+              className="px-8 py-3 rounded-lg bg-[#ff5959] text-white font-semibold text-lg hover:bg-[#ff4040] transition-all duration-300 shadow-[0_4px_15px_rgba(255,89,89,0.3)]"
+            >
+              Download CV
+            </a>
+            
+            {/* Nút Get In Touch: Viền đỏ */}
+            <a 
+              href="#contact" 
+              className="px-8 py-3 rounded-lg bg-transparent border border-[#ff5959] text-[#ff5959] font-semibold text-lg hover:bg-[#ff5959]/10 transition-all duration-300"
+            >
+              Get In Touch
+            </a>
+          </div>
+        </ScrollReveal>
+
       </div>
     </section>
   );

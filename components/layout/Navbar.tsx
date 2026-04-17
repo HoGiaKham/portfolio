@@ -25,16 +25,6 @@ export default function Navbar() {
             <Link href="#contact" className="text-gray-300 hover:text-[#ff5959] transition-colors">Contact</Link>
           </nav>
 
-         <div className="hidden md:block">
-            <a 
-              href="/docs/CV_HoGiaKham.pdf" 
-              download="CV_HoGiaKham.pdf"
-              className="px-6 py-3 border border-[#ff5959] text-[#ff5959] rounded hover:bg-[#ff5959] hover:text-white transition-all duration-300 font-medium"
-            >
-              Download CV
-            </a>
-          </div>
-
         </div>
       </div>
     </header>

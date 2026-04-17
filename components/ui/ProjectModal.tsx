@@ -67,7 +67,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           {project.images && project.images.length > 0 && (
             <div className="mb-10">
               <h4 className="text-lg font-semibold text-white mb-4 border-b border-gray-700 pb-2">
-                Giao diện Demo (Click để phóng to):
+                Giao diện Demo:
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {project.images.map((img, idx) => (
