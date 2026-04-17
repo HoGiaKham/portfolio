@@ -62,7 +62,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full">
             {/* Nút Download CV: Đỏ chủ đạo, có hiệu ứng shadow */}
             <a 
-              href="/docs/CV_HoGiaKham.pdf" 
+              href="/docs/CV_HoGiaKham_FullStack.pdf" 
               target="_blank" 
               className="px-8 py-3 rounded-lg bg-[#ff5959] text-white font-semibold text-lg hover:bg-[#ff4040] transition-all duration-300 shadow-[0_4px_15px_rgba(255,89,89,0.3)]"
             >
