@@ -1,4 +1,3 @@
-// components/sections/Contact.tsx
 "use client";
 
 import { useState } from "react";
@@ -9,7 +8,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true); // Bắt đầu trạng thái gửi (nút mờ đi, hiện chữ Sending...)
+    setIsSubmitting(true);
 
     const form = e.currentTarget;
     const formData = {
@@ -35,14 +34,13 @@ export default function Contact() {
       console.error("Lỗi kết nối:", error);
       alert("❌ Không thể kết nối đến máy chủ.");
     } finally {
-      setIsSubmitting(false); // Kết thúc quá trình gửi
+      setIsSubmitting(false);
     }
   };
 
   return (
     <section id="contact" className="relative py-20 bg-[#161821] text-white min-h-screen flex items-center overflow-hidden">
       
-      {/* SỐ 05 ĐỒNG BỘ VỚI CÁC SECTION KHÁC */}
       <div className="absolute top-28 right-0 flex items-center text-5xl md:text-7xl font-black text-[#252836] select-none hidden sm:flex z-0">
         05 <span className="w-12 md:w-20 h-[2px] bg-[#252836] ml-4 md:ml-6"></span>
       </div>
@@ -106,7 +104,6 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-wrap gap-6">
-                {/* GitHub */}
                 <a 
                   href="https://github.com/HoGiaKham" 
                   target="_blank" 
@@ -119,7 +116,6 @@ export default function Contact() {
                   </svg>
                 </a>
 
-                {/* LinkedIn */}
                 <a 
                   href="https://www.linkedin.com/in/h%E1%BB%93-gia-kh%C3%A2m-h%E1%BB%93-5b1ab0371/" 
                   target="_blank" 
@@ -132,7 +128,6 @@ export default function Contact() {
                   </svg>
                 </a>
 
-                {/* Facebook */}
                 <a 
                   href="https://www.facebook.com/giakham.1705/" 
                   target="_blank" 

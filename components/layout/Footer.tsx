@@ -1,4 +1,3 @@
-// components/layout/Footer.tsx
 import Link from "next/link";
 import { profileData } from "@/lib/data/profile";
 
@@ -10,7 +9,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           
-          {/* Column 1: Brand Info & Bio */}
+          // Brand Info & Bio
           <div className="space-y-6">
             <Link href="/" className="text-2xl font-bold tracking-wider">
               <span className="text-white">Hồ Gia </span>
@@ -21,7 +20,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Quick Links */}
+          // Column 2: Quick Links
           <div>
             <h4 className="text-white font-bold mb-6 text-lg tracking-wide uppercase">Quick Links</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
@@ -33,7 +32,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Contact Info */}
+          // Column 3: Contact Info
           <div>
             <h4 className="text-white font-bold mb-6 text-lg tracking-wide uppercase">Contact Info</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
@@ -51,7 +50,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Copyright & Social Media Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 text-xs">
             © {currentYear} Hồ Gia Khâm. All Rights Reserved.

@@ -1,4 +1,3 @@
-// components/sections/Projects.tsx
 "use client";
 
 import { useState } from "react";
@@ -38,7 +37,6 @@ export default function Projects() {
                   className="bg-[#1e2228]/50 rounded border border-gray-800 overflow-hidden hover:border-[#ff5959]/30 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full"
                 >
                   
-                  {/* ================= PHẦN ẢNH & HIỆU ỨNG OVERLAY HOVER ================= */}
                   <div 
                     className="relative w-full h-[220px] overflow-hidden bg-[#161821] cursor-pointer"
                     onClick={() => setSelectedProject(project)}
@@ -82,14 +80,12 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
-                  {/* ================= KẾT THÚC PHẦN ẢNH ================= */}
 
                   <div 
                     className="p-6 md:p-8 flex flex-col flex-grow cursor-pointer"
                     onClick={() => setSelectedProject(project)}
                   >
                     <div className="flex flex-col mb-4">
-                      {/* Tiêu đề thu nhỏ lại bằng cỡ với Experience */}
                       <h4 className="text-2xl font-bold text-white mb-1 group-hover:text-[#ff5959] transition-colors">{project.title}</h4>
                       <div className="flex items-center gap-2 mt-1">
                         <span className="text-[#ff5959] text-xs font-semibold">{project.role}</span>
@@ -97,7 +93,6 @@ export default function Projects() {
                       </div>
                     </div>
                     
-                    {/* Mô tả thu nhỏ lại thành text-sm bằng với Experience */}
                     <ul className="space-y-3 text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
                       {project.description.slice(0, 2).map((desc, idx) => (
                         <li key={idx} className="flex gap-3">
@@ -107,7 +102,6 @@ export default function Projects() {
                       ))}
                     </ul>
 
-                    {/* Tags công nghệ cũng nhỏ lại */}
                     <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-800 mt-auto">
                       {project.tech.map((tech, idx) => (
                         <span 

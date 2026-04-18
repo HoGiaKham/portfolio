@@ -1,6 +1,5 @@
-// components/sections/Skills.tsx
 import { skillsData } from "@/lib/data/skills";
-import ScrollReveal from "@/components/ui/ScrollReveal"; // Gọi ScrollReveal
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const getCategoryIcon = (index: number) => {
   const icons = [
@@ -20,7 +19,6 @@ export default function Skills() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10 w-full">
-        {/* Tiêu đề bay từ trái qua */}
         <ScrollReveal direction="left">
           <div className="mb-16">
             <h2 className="text-sm font-bold text-[#ff5959] tracking-widest uppercase mb-2">What I Do</h2>
@@ -30,7 +28,6 @@ export default function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillsData.map((skillGroup, index) => (
-            /* Hiệu ứng Domino: index * 0.15s */
             <ScrollReveal key={index} direction="up" delay={index * 0.15}>
               <div className="group bg-gradient-to-br from-[#202330] to-[#161821] p-8 md:p-10 rounded-xl border border-gray-700/50 hover:border-[#ff5959]/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(255,89,89,0.3)] flex flex-col h-full">
                 <div className="flex items-center gap-4 mb-8 border-b border-gray-700/50 pb-6">

@@ -1,4 +1,3 @@
-// app/api/contact/route.ts
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
@@ -15,10 +14,10 @@ export async function POST(req: Request) {
     }
 
     const data = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>', // Giữ nguyên dòng này để test
-      to: ['hogiakham1705@gmail.com'], // Mail nhận của bạn
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: ['hogiakham1705@gmail.com'],
       subject: `Tin nhắn mới từ Portfolio: ${name}`,
-      replyTo: email, // <-- Đã sửa thành replyTo ở đây
+      replyTo: email, //
       html: `
         <div style="font-family: sans-serif; padding: 20px;">
           <h2>Bạn có tin nhắn mới từ Portfolio!</h2>

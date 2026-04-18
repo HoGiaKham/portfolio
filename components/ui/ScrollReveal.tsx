@@ -15,7 +15,6 @@ export default function ScrollReveal({
   delay = 0 
 }: ScrollRevealProps) {
   
-  // BƯỚC 2: Gắn kiểu ': Variants' vào đây để TypeScript hết báo lỗi
   const variants: Variants = {
     hidden: {
       opacity: 0,

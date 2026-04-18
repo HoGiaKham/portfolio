@@ -1,4 +1,3 @@
-// components/sections/About.tsx
 import { profileData } from "@/lib/data/profile";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -6,14 +5,12 @@ export default function About() {
   return (
     <section id="about" className="relative bg-[#161821] min-h-screen flex items-center w-full overflow-hidden py-20">
       
-      {/* KHỐI CHỨA SỐ 01 BÊN PHẢI */}
       <div className="absolute top-28 right-0 flex items-center text-5xl md:text-7xl font-black text-[#252836] select-none hidden sm:flex z-0">
         01 <span className="w-12 md:w-20 h-[2px] bg-[#252836] ml-4 md:ml-6"></span>
       </div>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-20 items-center relative z-10 px-4 w-full">
         
-        {/* ================= CỘT TRÁI: GIỚI THIỆU & HỌC VẤN ================= */}
         <div className="w-full md:w-1/2">
           <ScrollReveal direction="left">
             <div className="flex items-center gap-4 mb-2">
@@ -25,10 +22,8 @@ export default function About() {
               {profileData.summary}
             </p>
 
-            {/* Khối Học Vấn: Thiết kế dạng Card xịn xò thay vì gạch dọc */}
             <div className="bg-[#1e2228]/40 border border-gray-800 rounded-xl p-6 hover:border-[#ff5959]/40 transition-all duration-300 shadow-sm group">
               <div className="flex items-center gap-3 mb-4">
-                {/* Icon mũ tốt nghiệp */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-[#ff5959] group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -48,7 +43,6 @@ export default function About() {
           </ScrollReveal>
         </div>
 
-        {/* ================= CỘT PHẢI: LƯỚI THÔNG TIN CHI TIẾT ================= */}
         <div className="w-full md:w-1/2 mt-8 md:mt-0">
           <ScrollReveal direction="right" delay={0.2}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6 p-8 border border-gray-800 rounded-xl bg-[#1e2228]/30 shadow-lg backdrop-blur-sm hover:border-[#ff5959]/30 transition-all duration-300">

@@ -1,4 +1,3 @@
-// components/sections/Experience.tsx
 import { experienceData } from "@/lib/data/experience";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -12,7 +11,7 @@ export default function Experience() {
 
       <div className="max-w-5xl mx-auto relative z-10 w-full px-4">
         
-        {/* Tiêu đề Section (Bay từ Trái sang) */}
+        {/* Tiêu đề Section */}
         <ScrollReveal direction="left">
           <div className="mb-16">
             <h2 className="text-sm font-bold text-[#ff5959] tracking-widest uppercase mb-2">Resume</h2>
@@ -26,7 +25,6 @@ export default function Experience() {
             <div key={index} className="relative pl-8 md:pl-12">
               <span className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-[#ff5959] shadow-[0_0_10px_rgba(255,89,89,0.5)] z-20"></span>
               
-              {/* Thẻ chứa thông tin (Card) - Domino trượt từ dưới lên */}
               <ScrollReveal direction="up" delay={index * 0.2}>
                 <div className="bg-[#1e2228]/50 p-6 md:p-8 rounded border border-gray-800 hover:border-[#ff5959]/30 transition-all duration-300 group relative z-10">
                   

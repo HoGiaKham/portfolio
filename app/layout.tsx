@@ -18,7 +18,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="bg-[#161821] text-white antialiased flex flex-col min-h-screen">
         <Navbar />
-        {/* Đảm bảo nội dung chính giãn ra để Footer luôn nằm dưới cùng */}
         <div className="flex-grow pt-20"> 
           {children}
         </div>

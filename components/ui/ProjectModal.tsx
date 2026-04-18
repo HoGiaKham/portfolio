@@ -1,5 +1,4 @@
-// components/ui/ProjectModal.tsx
-"use client"; // Thêm dòng này để dùng được tính năng click phóng to ảnh
+"use client";
 
 import { useState } from "react";
 import { ProjectData } from "@/types";
@@ -10,24 +9,18 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
-  // State để lưu ảnh đang được click phóng to. Bằng null nghĩa là không phóng to ảnh nào.
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   return (
     <>
-      {/* ================= KHUNG MODAL CHÍNH ================= */}
       <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
         
-        {/* Lớp nền đen mờ (Overlay) */}
         <div 
           className="absolute inset-0 bg-[#0f1115]/80 backdrop-blur-sm cursor-pointer"
           onClick={onClose}
         ></div>
 
-        {/* Khung nội dung chính - Đổi max-w-3xl thành max-w-5xl để nó to ngang ra */}
         <div className="relative bg-[#1e2228] w-full max-w-5xl rounded-xl border border-gray-700 shadow-2xl p-8 max-h-[90vh] overflow-y-auto animate-fade-in-up">
-          
-          {/* Nút X đóng Modal */}
           <button 
             onClick={onClose}
             className="absolute top-6 right-6 text-gray-400 hover:text-[#ff5959] transition-colors bg-[#2a2e35] rounded-full p-2 z-10"
@@ -38,7 +31,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </svg>
           </button>
 
-          {/* Nội dung chi tiết */}
           <h3 className="text-3xl sm:text-4xl font-bold text-white mb-2 pr-10">{project.title}</h3>
           <p className="text-[#ff5959] font-medium mb-8 pb-4 border-b border-gray-700">
             {project.role} • {project.duration}
@@ -63,7 +55,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             ))}
           </div>
 
-          {/* PHẦN HIỂN THỊ HÌNH ẢNH DEMO */}
           {project.images && project.images.length > 0 && (
             <div className="mb-10">
               <h4 className="text-lg font-semibold text-white mb-4 border-b border-gray-700 pb-2">
@@ -92,7 +83,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           )}
 
-          {/* Nút View Source Code */}
           <a 
             href={project.github} 
             target="_blank" 
@@ -107,7 +97,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
       </div>
 
-      {/* ================= LAYER PHÓNG TO ẢNH (ZOOM) ================= */}
       {zoomedImage && (
         <div 
           className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 cursor-zoom-out"
@@ -123,7 +112,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </svg>
           </button>
           
-          {/* Ảnh được phóng to */}
           <img 
             src={zoomedImage} 
             alt="Zoomed" 
