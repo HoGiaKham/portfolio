@@ -49,7 +49,7 @@ export default function Hero() {
                 loop: true,
                 delay: 75,
                 deleteSpeed: 50,
-                cursorClassName: "text-[#ff5959] animate-pulse" // Con trỏ màu đỏ chủ đạo
+                cursorClassName: "text-[#ff5959] animate-pulse"
               }}
             />
           </div>
