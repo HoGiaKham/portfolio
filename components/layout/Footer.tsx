@@ -30,7 +30,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          // Column 3: Contact Info
           <div>
             <h4 className="text-white font-bold mb-6 text-lg tracking-wide uppercase">Contact Info</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
