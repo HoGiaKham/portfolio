@@ -9,7 +9,6 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           
-          // Brand Info & Bio
           <div className="space-y-6">
             <Link href="/" className="text-2xl font-bold tracking-wider">
               <span className="text-white">Hồ Gia </span>
@@ -20,7 +19,6 @@ export default function Footer() {
             </p>
           </div>
 
-          // Column 2: Quick Links
           <div>
             <h4 className="text-white font-bold mb-6 text-lg tracking-wide uppercase">Quick Links</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
