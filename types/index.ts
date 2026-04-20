@@ -19,6 +19,8 @@ export interface ProjectData {
   role: string;
   duration: string;
   github: string;
+  liveUrl?: string;
+  videoUrl?: string;
   tech: string[];
   description: string[];
   images?: { label: string; url: string }[];

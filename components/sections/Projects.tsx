@@ -25,14 +25,14 @@ export default function Projects() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
           {projectsData.map((project, index) => {
             const thumbnailUrl = project.images && project.images.length > 0 
               ? project.images[0].url 
               : "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop";
 
             return (
-              <ScrollReveal key={index} direction="up" delay={index * 0.2}>
+              <ScrollReveal key={project.title} direction="up" delay={index * 0.2}>
                 <div 
                   className="bg-[#1e2228]/50 rounded border border-gray-800 overflow-hidden hover:border-[#ff5959]/30 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full"
                 >
@@ -48,19 +48,47 @@ export default function Projects() {
                     />
                     
                     <div className="absolute inset-0 bg-[#161821]/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300" onClick={(e) => e.stopPropagation()}>
+                      <div className="flex flex-wrap justify-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 px-2" onClick={(e) => e.stopPropagation()}>
                         
                         {project.github && (
                           <a 
                             href={project.github} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 bg-[#252833] border border-gray-600 text-white rounded text-sm font-medium hover:border-[#ff5959] hover:text-[#ff5959] transition-all duration-300"
+                            className="flex items-center gap-2 px-3 py-2 bg-[#252833] border border-gray-600 text-white rounded text-xs font-medium hover:border-[#ff5959] hover:text-[#ff5959] transition-all duration-300"
                           >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                             </svg>
                             Code
+                          </a>
+                        )}
+
+                        {project.liveUrl && (
+                          <a 
+                            href={project.liveUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-3 py-2 bg-[#1a1d27] border border-green-500/50 text-white rounded text-xs font-medium hover:border-green-500 hover:text-green-400 transition-all duration-300"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            Live
+                          </a>
+                        )}
+
+                        {project.videoUrl && (
+                          <a 
+                            href={project.videoUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-3 py-2 bg-[#1a1d27] border border-blue-500/50 text-white rounded text-xs font-medium hover:border-blue-500 hover:text-blue-400 transition-all duration-300"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Demo
                           </a>
                         )}
 
@@ -69,9 +97,9 @@ export default function Projects() {
                             e.stopPropagation();
                             setSelectedProject(project);
                           }}
-                          className="flex items-center gap-2 px-4 py-2 bg-[#ff5959] text-white rounded text-sm font-medium hover:bg-[#e04a4a] transition-all duration-300 shadow-[0_2px_8px_rgba(255,89,89,0.4)]"
+                          className="flex items-center gap-2 px-3 py-2 bg-[#ff5959] text-white rounded text-xs font-medium hover:bg-[#e04a4a] transition-all duration-300 shadow-[0_2px_8px_rgba(255,89,89,0.4)]"
                         >
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>
                           </svg>
                           Details
